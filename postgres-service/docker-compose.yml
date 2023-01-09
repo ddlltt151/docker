@@ -1,0 +1,16 @@
+version: '3.8'
+# Servicios de docker 
+services:
+
+  # Contenedor de postgres
+  postgres:
+    container_name: postgres
+    image: "postgres"
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: "root"
+      POSTGRES_PASSWORD: "root"
+      PGDATA: "/data/postgres"
+    ports:
+      - "15432:5432"
+    restart: unless-stopped
